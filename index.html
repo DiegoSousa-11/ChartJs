@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Exercício ChartJs</title>
+</head>
+<body>
+    <div style="display: flex; width: 50%;">
+        <canvas id="myLineChart"></canvas>
+        <canvas id="myBarChart"></canvas>
+    </div>
+</body>
+</html>
+
+<script>
+    const horario = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ]
+
+    const temperatura = [30, 29, 28, 25, 22, 23];
+    const umidade = [80, 82, 80, 85, 80, 83];
+
+    const lineChart = document.getElementById('myLineChart');
+
+    new Chart(lineChart, {
+        data: {
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'Temperatura',
+                    data: temperatura,
+                    backgroundColor: '#FF6384',
+                    borderColor: '#FF6384'
+                },
+                {
+                    type: 'line',
+                    label: 'Umidade',
+                    data: umidade,
+                    backgroundColor: '#36A2EB',
+                    borderColor: '#36A2EB'
+                }
+            ],
+            labels: horario,
+            options: {
+
+            }
+        },
+    });
+</script>
+
+
+<script>
+    const mes = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ]
+
+    const temperaturaMedia = [22, 24, 27, 23, 20, 18];
+    const umidadeMedia = [90, 89, 93, 87, 88, 82];
+
+    const barChart = document.getElementById('myBarChart');
+
+    new Chart(barChart, {
+        data: {
+            datasets: [
+                {
+                    type: 'bar',
+                    label: 'Temperatura média',
+                    data: temperaturaMedia,
+                    backgroundColor: '#FF6384',
+                },
+                {
+                    type: 'bar',
+                    label: 'Umidade média',
+                    data: umidadeMedia,
+                    backgroundColor: '#36A2EB',
+                }
+            ],
+            labels: mes
+        },
+    });
+</script>
